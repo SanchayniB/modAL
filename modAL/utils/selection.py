@@ -22,14 +22,14 @@ def shuffled_argmax(values: np.ndarray, n_instances: int = 1) -> np.ndarray:
     print(type(values))
     # shuffling indices and corresposnding values
     shuffled_idx = np.random.permutation(len(values))
-    shuffled_values = values.iloc[shuffled_idx]
+    shuffled_values = values[shuffled_idx]
 
     # getting the n_instances best instance
     # since mergesort is used, the shuffled order is preserved
     sorted_query_idx = np.argsort(shuffled_values, kind='mergesort')[len(shuffled_values)-n_instances:]
 
     # inverting the shuffle
-    query_idx = shuffled_idx.iloc[sorted_query_idx]
+    query_idx = shuffled_idx[sorted_query_idx]
     return query_idx
 
 
