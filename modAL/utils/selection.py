@@ -19,8 +19,8 @@ def shuffled_argmax(values: np.ndarray, n_instances: int = 1) -> np.ndarray:
         The indices of the n_instances largest values.
     """
     assert n_instances <= values.shape[0], 'n_instances must be less or equal than the size of utility'
-
-    # shuffling indices and corresponding values
+    print(type(values))
+    # shuffling indices and corresposnding values
     shuffled_idx = np.random.permutation(len(values))
     shuffled_values = values.iloc[shuffled_idx]
 
