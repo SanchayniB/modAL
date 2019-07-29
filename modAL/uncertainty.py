@@ -156,7 +156,7 @@ def uncertainty_sampling(classifier: BaseEstimator, X: modALinput,
     else:
         query_idx = shuffled_argmax(uncertainty, n_instances=n_instances)
 
-    return query_idx, X[query_idx]
+    return query_idx, X.iloc[query_idx]
 
 
 def margin_sampling(classifier: BaseEstimator, X: modALinput,
